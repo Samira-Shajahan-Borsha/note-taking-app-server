@@ -1,6 +1,8 @@
 import { IUser } from "./user.interface";
 import { User } from "./user.model";
 import { hashPassword } from "../../utils/password";
+import AppError from "../../errorHelpers/AppError";
+import httpStatusCode from "http-status-codes";
 
 const createUser = async (payload: Partial<IUser>) => {
     const { name, email, password: plainPassword, interests } = payload;
@@ -8,7 +10,7 @@ const createUser = async (payload: Partial<IUser>) => {
     const isUserExist = await User.findOne({ email });
 
     if (isUserExist) {
-        throw new Error("User with this email already exists");
+        throw new AppError(httpStatusCode.CONFLICT, "User with this email already exists");
     }
 
     const hashedPassword = await hashPassword(plainPassword as string);
