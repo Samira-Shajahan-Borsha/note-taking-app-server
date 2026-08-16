@@ -1,11 +1,11 @@
-import { IUser } from "./user.interface";
+import { IUser, ROLE } from "./user.interface";
 import { User } from "./user.model";
 import { hashPassword } from "../../utils/password";
 import AppError from "../../errorHelpers/AppError";
 import httpStatusCode from "http-status-codes";
 
 const createUser = async (payload: Partial<IUser>) => {
-    const { name, email, password: plainPassword, interests } = payload;
+    const { name, email, password: plainPassword, role, interests } = payload;
 
     const isUserExist = await User.findOne({ email });
 
@@ -19,6 +19,7 @@ const createUser = async (payload: Partial<IUser>) => {
         name,
         email,
         password: hashedPassword,
+        role: role || ROLE.USER,
         interests,
     });
 
