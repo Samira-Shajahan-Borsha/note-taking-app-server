@@ -28,6 +28,17 @@ const getSingleUser = catchAsync(async (req: Request, res: Response) => {
     });
 });
 
+const getGroupedByInterests = catchAsync(async (req: Request, res: Response) => {
+    const result = await UserService.getUsersGroupedByInterests();
+
+    sendResponse(res, {
+        statusCode: httpStatusCode.OK,
+        success: true,
+        message: "Users grouped by interests retrieved successfully",
+        data: result,
+    });
+});
+
 const updateUser = catchAsync(async (req: Request, res: Response) => {
     const userId = req.params.id as string;
 
@@ -57,6 +68,7 @@ const deleteUser = catchAsync(async (req: Request, res: Response) => {
 export const UserController = {
     createUser,
     getSingleUser,
+    getGroupedByInterests,
     updateUser,
     deleteUser,
 };

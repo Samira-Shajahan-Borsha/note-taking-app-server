@@ -14,6 +14,12 @@ router.post(
     UserController.createUser,
 );
 
+router.get(
+    "/grouped-by-interests",
+    checkAuth(ROLE.ADMIN),
+    UserController.getGroupedByInterests,
+);
+
 router.get("/:id", checkAuth(ROLE.ADMIN), UserController.getSingleUser);
 
 router.patch(

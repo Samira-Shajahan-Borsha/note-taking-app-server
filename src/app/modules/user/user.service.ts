@@ -42,6 +42,40 @@ const getSingleUser = async (id: string) => {
     return user;
 };
 
+const getUsersGroupedByInterests = async () => {
+    const result = await User.aggregate([
+        {
+            $unwind: "$interests",
+        },
+        {
+            $group: {
+                _id: "$interests",
+                count: {
+                    $sum: 1,
+                },
+                users: {
+                    $push: {
+                        userId: "$_id",
+                        name: "$name",
+                        email: "$email",
+                        role: "$role",
+                    },
+                },
+            },
+        },
+        {
+            $project: {
+                _id: 0,
+                interest: "$_id",
+                count: 1,
+                users: 1,
+            },
+        },
+    ]);
+
+    return result;
+};
+
 const updateUser = async (id: string, payload: Partial<IUser>) => {
     const { name, email, password: plainPassword, role, interests } = payload;
 
@@ -99,6 +133,7 @@ const deleteUser = async (id: string) => {
 export const UserService = {
     createUser,
     getSingleUser,
+    getUsersGroupedByInterests,
     updateUser,
     deleteUser,
 };
