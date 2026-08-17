@@ -5,3 +5,4 @@ node_modules
 dist
 
 notes.md
+.vercel
