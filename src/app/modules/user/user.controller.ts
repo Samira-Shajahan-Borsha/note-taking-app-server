@@ -15,6 +15,19 @@ const createUser = catchAsync(async (req: Request, res: Response) => {
     });
 });
 
+const getAllUsers = catchAsync(async (req: Request, res: Response) => {
+    const query = req.query;
+    const result = await UserService.getAllUsers(query as Record<string, string>);
+
+    sendResponse(res, {
+        statusCode: httpStatusCode.OK,
+        success: true,
+        message: "All users retrieved successfully",
+        meta: result.meta,
+        data: result.result,
+    });
+});
+
 const getSingleUser = catchAsync(async (req: Request, res: Response) => {
     const userId = req.params.id as string;
 
@@ -67,6 +80,7 @@ const deleteUser = catchAsync(async (req: Request, res: Response) => {
 
 export const UserController = {
     createUser,
+    getAllUsers,
     getSingleUser,
     getGroupedByInterests,
     updateUser,

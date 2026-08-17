@@ -3,6 +3,7 @@ import { User } from "./user.model";
 import { hashPassword } from "../../utils/password";
 import AppError from "../../errorHelpers/AppError";
 import httpStatusCode from "http-status-codes";
+import { QueryBuilder } from "../../utils/queryBuilder";
 
 const createUser = async (payload: Partial<IUser>) => {
     const { name, email, password: plainPassword, role, interests } = payload;
@@ -27,6 +28,16 @@ const createUser = async (payload: Partial<IUser>) => {
     const { password, ...user } = result.toObject();
 
     return user;
+};
+
+const getAllUsers = async (query: Record<string, string>) => {
+    const queryBuilder = new QueryBuilder(User.find().select("-password"), query);
+
+    const users = queryBuilder.paginate().sort();
+
+    const [result, meta] = await Promise.all([users.build(), users.getMeta()]);
+
+    return { result, meta };
 };
 
 const getSingleUser = async (id: string) => {
@@ -132,6 +143,7 @@ const deleteUser = async (id: string) => {
 
 export const UserService = {
     createUser,
+    getAllUsers,
     getSingleUser,
     getUsersGroupedByInterests,
     updateUser,

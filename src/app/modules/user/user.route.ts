@@ -20,6 +20,12 @@ router.get(
     UserController.getGroupedByInterests,
 );
 
+router.get(
+    "/all-users",
+    checkAuth(ROLE.ADMIN),
+    UserController.getAllUsers,
+);
+
 router.get("/:id", checkAuth(ROLE.ADMIN), UserController.getSingleUser);
 
 router.patch(
