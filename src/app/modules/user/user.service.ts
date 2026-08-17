@@ -3,6 +3,7 @@ import { User } from "./user.model";
 import { hashPassword } from "../../utils/password";
 import AppError from "../../errorHelpers/AppError";
 import httpStatusCode from "http-status-codes";
+import { QueryBuilder } from "../../utils/queryBuilder";
 
 const createUser = async (payload: Partial<IUser>) => {
     const { name, email, password: plainPassword, role, interests } = payload;
@@ -29,6 +30,122 @@ const createUser = async (payload: Partial<IUser>) => {
     return user;
 };
 
+const getAllUsers = async (query: Record<string, string>) => {
+    const queryBuilder = new QueryBuilder(User.find().select("-password"), query);
+
+    const users = queryBuilder.paginate().sort();
+
+    const [result, meta] = await Promise.all([users.build(), users.getMeta()]);
+
+    return { result, meta };
+};
+
+const getSingleUser = async (id: string) => {
+    const isUserExist = await User.findById(id);
+
+    if (!isUserExist) {
+        throw new AppError(httpStatusCode.NOT_FOUND, "User doesn't exist");
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { password, ...user } = isUserExist.toObject();
+
+    return user;
+};
+
+const getUsersGroupedByInterests = async () => {
+    const result = await User.aggregate([
+        {
+            $unwind: "$interests",
+        },
+        {
+            $group: {
+                _id: "$interests",
+                count: {
+                    $sum: 1,
+                },
+                users: {
+                    $push: {
+                        userId: "$_id",
+                        name: "$name",
+                        email: "$email",
+                        role: "$role",
+                    },
+                },
+            },
+        },
+        {
+            $project: {
+                _id: 0,
+                interest: "$_id",
+                count: 1,
+                users: 1,
+            },
+        },
+    ]);
+
+    return result;
+};
+
+const updateUser = async (id: string, payload: Partial<IUser>) => {
+    const { name, email, password: plainPassword, role, interests } = payload;
+
+    const isUserExist = await User.findById(id);
+
+    if (!isUserExist) {
+        throw new AppError(httpStatusCode.NOT_FOUND, "User doesn't exist");
+    }
+
+    if (email) {
+        const isEmailTaken = await User.findOne({ email, _id: { $ne: id } });
+
+        if (isEmailTaken) {
+            throw new AppError(httpStatusCode.CONFLICT, "User with this email already exists");
+        }
+    }
+
+    const updatedData: Partial<IUser> = { name, email, role, interests };
+
+    if (plainPassword) {
+        updatedData.password = await hashPassword(plainPassword);
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(id, updatedData, {
+        new: true,
+        runValidators: true,
+    });
+
+    if (!updatedUser) {
+        throw new AppError(httpStatusCode.NOT_FOUND, "User doesn't exist");
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { password, ...user } = updatedUser.toObject();
+
+    return user;
+};
+
+const deleteUser = async (id: string) => {
+    const isUserExist = await User.findById(id);
+
+    if (!isUserExist) {
+        throw new AppError(httpStatusCode.NOT_FOUND, "User doesn't exist");
+    }
+
+    const deletedUser = await User.findByIdAndDelete(id);
+
+    if (!deletedUser) {
+        throw new AppError(httpStatusCode.NOT_FOUND, "User doesn't exist");
+    }
+
+    return null;
+};
+
 export const UserService = {
     createUser,
+    getAllUsers,
+    getSingleUser,
+    getUsersGroupedByInterests,
+    updateUser,
+    deleteUser,
 };
