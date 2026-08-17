@@ -1,0 +1,1891 @@
+{
+  "info": {
+    "_postman_id": "f61f0519-c82f-426c-95fc-d76405f3a4a8",
+    "name": "Secure Note Taking App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31730860"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    /* \"name\": \"Fahim Ayon\",\r\n    \"email\": \"fahim@gmail.com\",\r\n    \"password\": \"1234@Fahim\",\r\n    \"role\": \"ADMIN\" */\r\n    \r\n    \"name\": \"Ayon\",\r\n    \"email\": \"ayon@gmail.com\",\r\n    \"password\": \"1234@Ayon\",\r\n    \"role\": \"ADMIN\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/user/create-user",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "user",
+                "create-user"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create User",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Fahim Ayon\",\r\n    \"email\": \"fahim@gmail.com\",\r\n    \"password\": \"1234@Fahim\",\r\n    \"role\": \"ADMIN\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/user/create-user",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "user",
+                    "create-user"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "267"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"10b-yd2OGozRyBmwPTMrwGG4FT19ehM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 16 Aug 2026 17:17:33 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"name\": \"Fahim Ayon\",\n        \"email\": \"fahim@gmail.com\",\n        \"role\": \"ADMIN\",\n        \"interests\": [],\n        \"_id\": \"6a81f0adfa901e570f721794\",\n        \"createdAt\": \"2026-08-16T17:17:33.786Z\",\n        \"updatedAt\": \"2026-08-16T17:17:33.786Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "text"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/user/6a81fc9e73192caa4f8a3133",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "user",
+                "6a81fc9e73192caa4f8a3133"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete User",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "text"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/user/6a81fc9e73192caa4f8a3133",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "user",
+                    "6a81fc9e73192caa4f8a3133"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "260"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"104-fMccKNV9eOvnI7b+osz2VK/YC08\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 16 Aug 2026 18:15:13 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User deleted successfully\",\n    \"data\": {\n        \"_id\": \"6a81fc9e73192caa4f8a3133\",\n        \"name\": \"Fahim\",\n        \"email\": \"ayon@gmail.com\",\n        \"role\": \"USER\",\n        \"interests\": [],\n        \"createdAt\": \"2026-08-16T18:08:30.541Z\",\n        \"updatedAt\": \"2026-08-16T18:08:30.541Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get User",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/user/6a8200ee9b6cfcffc85b5ac0",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "user",
+                "6a8200ee9b6cfcffc85b5ac0"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get User",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/user/6a8200ee9b6cfcffc85b5ac0",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "user",
+                    "6a8200ee9b6cfcffc85b5ac0"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "262"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"106-HOEy9QvNU4GUafItAXAlttvAg30\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 16 Aug 2026 18:32:18 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User retrieved successfully\",\n    \"data\": {\n        \"_id\": \"6a8200ee9b6cfcffc85b5ac0\",\n        \"name\": \"Ayon\",\n        \"email\": \"ayon@gmail.com\",\n        \"role\": \"ADMIN\",\n        \"interests\": [],\n        \"createdAt\": \"2026-08-16T18:26:54.488Z\",\n        \"updatedAt\": \"2026-08-16T18:26:54.488Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    /* \"name\": \"Sam\",\r\n    \"email\": \"sam@example.com\",\r\n    \"password\": \"1234@Sam\",\r\n    \"interests\": [\"coding\", \"gaming\"] */\r\n\r\n    \"name\": \"Samin\",\r\n    \"email\": \"samin@example.com\",\r\n    \"interests\": [\"coding\", \"gaming\", \"reading\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/user/6a820d8b808a43f14a7f2fba",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "user",
+                "6a820d8b808a43f14a7f2fba"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update User",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Sam\",\r\n    \"email\": \"sam@example.com\",\r\n    \"password\": \"1234@Sam\",\r\n    \"interests\": [\"coding\", \"gaming\"]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/user/6a8200ee9b6cfcffc85b5ac0",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "user",
+                    "6a8200ee9b6cfcffc85b5ac0"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "276"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"114-p+xFWc6htQL+idpePD6IQMyBW/8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 16 Aug 2026 19:04:15 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User updated successfully\",\n    \"data\": {\n        \"_id\": \"6a8200ee9b6cfcffc85b5ac0\",\n        \"name\": \"Sam\",\n        \"email\": \"sam@example.com\",\n        \"role\": \"USER\",\n        \"interests\": [\n            \"coding\",\n            \"gaming\"\n        ],\n        \"createdAt\": \"2026-08-16T18:26:54.488Z\",\n        \"updatedAt\": \"2026-08-16T19:04:15.199Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Grouped by interests",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/user/grouped-by-interests",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "user",
+                "grouped-by-interests"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Grouped by interests",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/user/grouped-by-interests",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "user",
+                    "grouped-by-interests"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "762"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2fa-9FeSEhy6WfDrinjXZAkEQ1p/quE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 05:27:39 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Users grouped by interests retrieved successfully\",\n    \"data\": [\n        {\n            \"count\": 1,\n            \"users\": [\n                {\n                    \"userId\": \"6a81e8994a6f8dd795fa8df7\",\n                    \"name\": \"Rafsan Qadir\",\n                    \"email\": \"rafsan@gmail.com\",\n                    \"role\": \"USER\"\n                }\n            ],\n            \"interest\": \"chess\"\n        },\n        {\n            \"count\": 2,\n            \"users\": [\n                {\n                    \"userId\": \"6a81e8994a6f8dd795fa8df7\",\n                    \"name\": \"Rafsan Qadir\",\n                    \"email\": \"rafsan@gmail.com\",\n                    \"role\": \"USER\"\n                },\n                {\n                    \"userId\": \"6a820d8b808a43f14a7f2fba\",\n                    \"name\": \"Samin\",\n                    \"email\": \"samin@example.com\",\n                    \"role\": \"ADMIN\"\n                }\n            ],\n            \"interest\": \"reading\"\n        },\n        {\n            \"count\": 1,\n            \"users\": [\n                {\n                    \"userId\": \"6a820d8b808a43f14a7f2fba\",\n                    \"name\": \"Samin\",\n                    \"email\": \"samin@example.com\",\n                    \"role\": \"ADMIN\"\n                }\n            ],\n            \"interest\": \"coding\"\n        },\n        {\n            \"count\": 1,\n            \"users\": [\n                {\n                    \"userId\": \"6a820d8b808a43f14a7f2fba\",\n                    \"name\": \"Samin\",\n                    \"email\": \"samin@example.com\",\n                    \"role\": \"ADMIN\"\n                }\n            ],\n            \"interest\": \"gaming\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/user/all-users?page=2&limit=3",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "user",
+                "all-users"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "limit",
+                  "value": "3",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Users",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/user/all-users?page=2&limit=3",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "user",
+                    "all-users"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "2"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "3"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "537"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"219-6tXvsx0W9V1WUZf9uXa5sQ3fFfw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 06:29:22 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"All users retrieved successfully\",\n    \"meta\": {\n        \"page\": 2,\n        \"limit\": 3,\n        \"total\": 5,\n        \"totalPage\": 2\n    },\n    \"data\": [\n        {\n            \"_id\": \"6a81e8994a6f8dd795fa8df7\",\n            \"name\": \"Rafsan Qadir\",\n            \"email\": \"rafsan@gmail.com\",\n            \"role\": \"USER\",\n            \"interests\": [\n                \"chess\",\n                \"reading\"\n            ],\n            \"createdAt\": \"2026-08-16T16:43:05.161Z\",\n            \"updatedAt\": \"2026-08-16T16:43:05.161Z\"\n        },\n        {\n            \"_id\": \"6a81e305d82661f81a506e48\",\n            \"name\": \"Super Admin\",\n            \"email\": \"admin@gmail.com\",\n            \"role\": \"ADMIN\",\n            \"interests\": [],\n            \"createdAt\": \"2026-08-16T16:19:17.251Z\",\n            \"updatedAt\": \"2026-08-16T16:19:17.251Z\"\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Note",
+      "item": [
+        {
+          "name": "Create Note",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "/* {\r\n    \"title\": \"Groceries\",\r\n    \"content\": \"Eggs, milk, bread, coffee beans, and avocados.\"\r\n} */\r\n\r\n{\r\n  \"title\": \"Birthday Gift Ideas\",\r\n  \"content\": \"Wireless earbuds, coffee grinder, hiking backpack, board game.\"\r\n}\r\n\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/note/create-note",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "note",
+                "create-note"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Note",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Groceries\",\r\n    \"content\": \"Eggs, milk, bread, coffee beans, and avocados.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/note/create-note",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "note",
+                    "create-note"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "304"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"130-kNZfVIUfIVDuU8uP9GaDDYzBLiM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 06:33:42 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Note created successfully\",\n    \"data\": {\n        \"title\": \"Groceries\",\n        \"content\": \"Eggs, milk, bread, coffee beans, and avocados.\",\n        \"user\": \"6a81e305d82661f81a506e48\",\n        \"_id\": \"6a82ab4653e87b4610c5a739\",\n        \"createdAt\": \"2026-08-17T06:33:42.726Z\",\n        \"updatedAt\": \"2026-08-17T06:33:42.726Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Single Note",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/note/6a82c4ed08a35749d01035b1",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "note",
+                "6a82c4ed08a35749d01035b1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Single Note",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/note/6a82ab4653e87b4610c5a739",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "note",
+                    "6a82ab4653e87b4610c5a739"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "306"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"132-Igm5bZWgu2KYKT5Iaa9wZX1fk1E\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 08:10:07 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Note retrieved successfully\",\n    \"data\": {\n        \"_id\": \"6a82ab4653e87b4610c5a739\",\n        \"title\": \"Groceries\",\n        \"content\": \"Eggs, milk, bread, coffee beans, and avocados.\",\n        \"user\": \"6a81e305d82661f81a506e48\",\n        \"createdAt\": \"2026-08-17T06:33:42.726Z\",\n        \"updatedAt\": \"2026-08-17T06:33:42.726Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Note",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/note/6a82c4ed08a35749d01035b1",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "note",
+                "6a82c4ed08a35749d01035b1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete Note",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/note/6a82b18a53e87b4610c5a73b",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "note",
+                    "6a82b18a53e87b4610c5a73b"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "83"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"53-8pKy37V1HqgRhq3mSLwZ7W29ncg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 08:22:07 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Note deleted successfully\",\n    \"data\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get My Notes",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/note/my-notes?page=1&limit=3",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "note",
+                "my-notes"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "limit",
+                  "value": "3",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get My Notes",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/note/my-notes?page=1&limit=3",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "note",
+                    "my-notes"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "3"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "848"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"350-rKJn0dlpte6CKJ9CnVsmkr0M7Tw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 09:17:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"My notes retrieved successfully\",\n    \"meta\": {\n        \"page\": 1,\n        \"limit\": 3,\n        \"total\": 4,\n        \"totalPage\": 2\n    },\n    \"data\": [\n        {\n            \"_id\": \"6a82d1a119c7dbe14dfebd95\",\n            \"title\": \"Book Ideas\",\n            \"content\": \"Sci-fi novel about AI detecting a cosmic anomaly in 2047.\",\n            \"user\": \"6a81e305d82661f81a506e48\",\n            \"createdAt\": \"2026-08-17T09:17:21.351Z\",\n            \"updatedAt\": \"2026-08-17T09:17:21.351Z\"\n        },\n        {\n            \"_id\": \"6a82d19019c7dbe14dfebd94\",\n            \"title\": \"Meeting Notes - Sprint Planning\",\n            \"content\": \"Discuss Q3 roadmap, assign tickets, review blockers.\",\n            \"user\": \"6a81e305d82661f81a506e48\",\n            \"createdAt\": \"2026-08-17T09:17:04.435Z\",\n            \"updatedAt\": \"2026-08-17T09:17:04.435Z\"\n        },\n        {\n            \"_id\": \"6a82d1037e7dc3fc971cca48\",\n            \"title\": \"Grocery List\",\n            \"content\": \"Milk, eggs, bread, coffee, tomatoes\",\n            \"user\": \"6a81e305d82661f81a506e48\",\n            \"createdAt\": \"2026-08-17T09:14:43.856Z\",\n            \"updatedAt\": \"2026-08-17T09:14:43.856Z\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Notes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/note/all-notes?page=1&limit=2",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "note",
+                "all-notes"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "limit",
+                  "value": "2",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Notes",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/note/all-notes?page=1&limit=2",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "note",
+                    "all-notes"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "733"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2dd-aeIDCYX43jzfEkWppPhjJkL0PzA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 09:18:43 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"All notes retrieved successfully\",\n    \"meta\": {\n        \"page\": 1,\n        \"limit\": 2,\n        \"total\": 7,\n        \"totalPage\": 4\n    },\n    \"data\": [\n        {\n            \"_id\": \"6a82d1e719c7dbe14dfebd96\",\n            \"title\": \"Project Brainstorm\",\n            \"content\": \"AI-powered study planner, offline-first, voice input support.\",\n            \"user\": {\n                \"_id\": \"6a81f08bdfb817c64ce08988\",\n                \"name\": \"Samira\",\n                \"email\": \"samira@gmail.com\"\n            },\n            \"createdAt\": \"2026-08-17T09:18:31.357Z\",\n            \"updatedAt\": \"2026-08-17T09:18:31.357Z\"\n        },\n        {\n            \"_id\": \"6a82d1a119c7dbe14dfebd95\",\n            \"title\": \"Book Ideas\",\n            \"content\": \"Sci-fi novel about AI detecting a cosmic anomaly in 2047.\",\n            \"user\": {\n                \"_id\": \"6a81e305d82661f81a506e48\",\n                \"name\": \"Super Admin\",\n                \"email\": \"admin@gmail.com\"\n            },\n            \"createdAt\": \"2026-08-17T09:17:21.351Z\",\n            \"updatedAt\": \"2026-08-17T09:17:21.351Z\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Note",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Birthday Gift Ideas\",\r\n    \"content\": \"Wireless earbuds, coffee grinder, hiking backpack, board game.\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/note/6a82d1a119c7dbe14dfebd95",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "note",
+                "6a82d1a119c7dbe14dfebd95"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Note",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"Birthday Gift Ideas\",\r\n    \"content\": \"Wireless earbuds, coffee grinder, hiking backpack, board game.\"\r\n} \r\n\r\n    \r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/note/6a82d25319c7dbe14dfebd9b",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "note",
+                    "6a82d25319c7dbe14dfebd9b"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "330"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"14a-GgwS6KLRTZesc4MTNtGeyyXNzKM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 09:24:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"Note updated successfully\",\n    \"data\": {\n        \"_id\": \"6a82d25319c7dbe14dfebd9b\",\n        \"title\": \"Birthday Gift Ideas\",\n        \"content\": \"Wireless earbuds, coffee grinder, hiking backpack, board game.\",\n        \"user\": \"6a81f0adfa901e570f721794\",\n        \"createdAt\": \"2026-08-17T09:20:19.573Z\",\n        \"updatedAt\": \"2026-08-17T09:24:40.108Z\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Rafsan Qadir \",\r\n    \"email\": \"rafsan@gmail.com\",\r\n    \"password\": \"1234@Rafsan\",\r\n    \"interests\": [\"chess\", \"reading\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/auth/register",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Register",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Rafsan Qadir \",\r\n    \"email\": \"rafsan@gmail.com\",\r\n    \"password\": \"1234@Rafsan\",\r\n    \"interests\": [\"chess\", \"reading\"]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/auth/register",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "272"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"110-42D2UlgE7A/Wp7KZKaZQAWVj8P8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 16 Aug 2026 15:04:35 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"success\": true,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"name\": \"Rafsan Qadir\",\n        \"email\": \"rafsan@gmail.com\",\n        \"role\": \"USER\",\n        \"interests\": [\n            \"chess\",\n            \"reading\"\n        ],\n        \"_id\": \"6a81d1836cc62786023b2049\",\n        \"createdAt\": \"2026-08-16T15:04:35.948Z\",\n        \"updatedAt\": \"2026-08-16T15:04:35.948Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"12345678@admin\"\r\n    /* \"email\": \"fahim@gmail.com\",\r\n    \"password\": \"1234@Fahim\" */\r\n    /* \"email\": \"samira@gmail.com\",\r\n    \"password\": \"1234@Samira\" */\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/auth/login",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Access Token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/auth/refresh-token",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "auth",
+                "refresh-token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/auth/logout",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Logout",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/auth/logout",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "logout"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "accessToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=None"
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "refreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=None"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "86"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"56-XrRUdx0Ldp/3oL9MGEf2hr15COg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 16 Aug 2026 17:31:10 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User logged out successfully\",\n    \"data\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get My Profile Info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/auth/me",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get My Profile Info",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/auth/me",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "me"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "278"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"116-GkyLZ3/y8QnJ0BeKAjqgRMhQYTA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 16 Aug 2026 17:37:07 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User profile info retrieved successfully\",\n    \"data\": {\n        \"_id\": \"6a81f08bdfb817c64ce08988\",\n        \"name\": \"Samira\",\n        \"email\": \"samira@gmail.com\",\n        \"role\": \"USER\",\n        \"interests\": [],\n        \"createdAt\": \"2026-08-16T17:16:59.369Z\",\n        \"updatedAt\": \"2026-08-16T17:16:59.369Z\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Post",
+      "item": [
+        {
+          "name": "Create Post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Sleep Better Tonight\",\r\n  \"content\": \"Proven habits to fall asleep faster and wake up feeling refreshed.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/post/create-post",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "post",
+                "create-post"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Post",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"Meal Prep for Busy Weekdays\",\r\n  \"content\": \"Simple recipes you can prepare on Sunday to save time during the work week.\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/post/create-post",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "post",
+                    "create-post"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "351"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"15f-D1bs2degRK2WPZDpRTn6KRSRnTo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 10:54:50 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 201,\n    \"success\": true,\n    \"message\": \"Post created successfully\",\n    \"data\": {\n        \"title\": \"Meal Prep for Busy Weekdays\",\n        \"content\": \"Simple recipes you can prepare on Sunday to save time during the work week.\",\n        \"user\": \"6a81f08bdfb817c64ce08988\",\n        \"_id\": \"6a82e87a31af52009939689a\",\n        \"createdAt\": \"2026-08-17T10:54:50.118Z\",\n        \"updatedAt\": \"2026-08-17T10:54:50.118Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Posts By UserId",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Sleep Better Tonight\",\r\n  \"content\": \"Proven habits to fall asleep faster and wake up feeling refreshed.\"\r\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/post/user/6a81f08bdfb817c64ce08988?page=1&limit=2",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "post",
+                "user",
+                "6a81f08bdfb817c64ce08988"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Posts By UserId",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"Sleep Better Tonight\",\r\n  \"content\": \"Proven habits to fall asleep faster and wake up feeling refreshed.\"\r\n}"
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/post/user/6a81f08bdfb817c64ce08988?page=1&limit=2",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "post",
+                    "user",
+                    "6a81f08bdfb817c64ce08988"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "803"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"323-SVlCgiJJBjC6/HgoNVRtmrYsN0g\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 10:59:08 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"statusCode\": 200,\n    \"success\": true,\n    \"message\": \"User posts retrieved successfully\",\n    \"meta\": {\n        \"page\": 1,\n        \"limit\": 2,\n        \"total\": 4,\n        \"totalPage\": 2\n    },\n    \"data\": [\n        {\n            \"_id\": \"6a82e89931af52009939689d\",\n            \"title\": \"Learning to Code in Your 30s\",\n            \"content\": \"It is never too late to learn programming. A practical roadmap for adult beginners.\",\n            \"user\": {\n                \"_id\": \"6a81f08bdfb817c64ce08988\",\n                \"name\": \"Samira\",\n                \"email\": \"samira@gmail.com\"\n            },\n            \"createdAt\": \"2026-08-17T10:55:21.120Z\",\n            \"updatedAt\": \"2026-08-17T10:55:21.120Z\"\n        },\n        {\n            \"_id\": \"6a82e89231af52009939689c\",\n            \"title\": \"Setting Up a Home Office\",\n            \"content\": \"Essential desk setup tips to improve posture and boost focus while working remotely.\",\n            \"user\": {\n                \"_id\": \"6a81f08bdfb817c64ce08988\",\n                \"name\": \"Samira\",\n                \"email\": \"samira@gmail.com\"\n            },\n            \"createdAt\": \"2026-08-17T10:55:14.406Z\",\n            \"updatedAt\": \"2026-08-17T10:55:14.406Z\"\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Root Route",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{URL}}",
+          "host": [
+            "{{URL}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Root Route",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}",
+              "host": [
+                "{{URL}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "142"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"8e-yhc2hB60KORn+/UigAkILg21BQU\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 16 Aug 2026 15:44:53 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"message\": \"Welcome to Secure Note Taking App Server\",\n    \"environment\": \"development\",\n    \"uptime\": \"33.94 sec\",\n    \"timeStamp\": \"2026-08-16T15:44:53.101Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Not Found",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/auth/registers",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "auth",
+            "registers"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Not Found",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/auth/registers",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "auth",
+                "registers"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "136"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"88-myYJu9ZS0P51On/m2wGXn6AGPOc\""
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 16 Aug 2026 15:44:20 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"success\": false,\n    \"message\": \"API NOT FOUND!\",\n    \"error\": {\n        \"path\": \"/api/v1/auth/registercdsgt\",\n        \"message\": \"Your requested path is not found!\"\n    }\n}"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": ""
+    },
+    {
+      "key": "URL",
+      "value": ""
+    }
+  ]
+}
