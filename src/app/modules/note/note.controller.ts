@@ -35,9 +35,8 @@ const getSingleNote = catchAsync(async (req: Request, res: Response) => {
 const deleteNote = catchAsync(async (req: Request, res: Response) => {
     const noteId = req.params.id as string;
     const userId = req.user.userId as string;
-    const role = req.user.role as string;
 
-    const result = await NoteService.deleteNote(noteId, userId, role);
+    const result = await NoteService.deleteNote(noteId, userId);
 
     sendResponse(res, {
         statusCode: httpStatusCode.OK,

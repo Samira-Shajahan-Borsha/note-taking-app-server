@@ -3,7 +3,6 @@ import { Note } from "./note.model";
 import AppError from "../../errorHelpers/AppError";
 import httpStatusCode from "http-status-codes";
 import { ROLE } from "../user/user.interface";
-import { User } from "../user/user.model";
 
 const createNote = async (userId: string, payload: Partial<INote>) => {
     const { title, content } = payload;
@@ -32,24 +31,15 @@ const getSingleNote = async (noteId: string, userId: string, role: string) => {
     return note.toObject();
 };
 
-const deleteNote = async (noteId: string, userId: string, role: string) => {
+const deleteNote = async (noteId: string, userId: string) => {
     const note = await Note.findById(noteId);
 
     if (!note) {
         throw new AppError(httpStatusCode.NOT_FOUND, "Note doesn't exist");
     }
 
-    const isOwner = note.user.toString() === userId;
-
-    if (!isOwner) {
-        const noteOwner = await User.findById(note.user);
-
-        if (!noteOwner || !(role === ROLE.ADMIN && noteOwner.role === ROLE.USER)) {
-            throw new AppError(
-                httpStatusCode.FORBIDDEN,
-                "You are not permitted to delete this note",
-            );
-        }
+    if (note.user.toString() !== userId) {
+        throw new AppError(httpStatusCode.FORBIDDEN, "You are not permitted to delete this note");
     }
 
     const deletedNote = await Note.findByIdAndDelete(noteId);
