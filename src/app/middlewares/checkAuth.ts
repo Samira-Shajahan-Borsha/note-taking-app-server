@@ -18,8 +18,6 @@ export const checkAuth =
 
         const isUserExist = await User.findById(verifiedToken.userId);
 
-        // console.log(isUserExist, "User from middleware");
-
         if (!isUserExist) {
             throw new AppError(httpStatusCode.NOT_FOUND, "User does not exist");
         }
