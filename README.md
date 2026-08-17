@@ -25,10 +25,13 @@ Key capabilities:
 
 ---
 
-## 🌐 Live API & Repository
+## 🌐 Live URLs & Repository
 
-- **Server Live API:**
-  https://YOUR-LIVE-URL/
+- **Frontend Live URL:**
+  https://note-taking-app-client-omega.vercel.app
+
+- **Backend Live API:**
+  https://note-taking-app-server.vercel.app/
 
 - **Repository:**
   https://github.com/Samira-Shajahan-Borsha/note-taking-app-server
