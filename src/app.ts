@@ -5,6 +5,7 @@ import router from "./app/routes";
 import notFound from "./app/middlewares/notFound";
 import { globalErrorHandler } from "./app/middlewares/globalErrorHandler";
 import { envVars } from "./app/config/env";
+import { connectDB } from "./app/utils/connectDB";
 import cors from "cors";
 
 const app: Application = express();
@@ -18,6 +19,15 @@ app.use(
         credentials: true,
     })
 );
+
+app.use(async (_req, _res, next) => {
+    try {
+        await connectDB();
+        next();
+    } catch (error) {
+        next(error);
+    }
+});
 
 app.use("/api/v1", router);
 

@@ -6,3 +6,5 @@ dist
 
 notes.md
 .vercel
+tsup.config.js
+*.tsbuildinfo
